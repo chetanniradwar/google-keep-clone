@@ -1,8 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400&family=Roboto:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=East+Sea+Dokdo&display=swap");
 
 body {
   margin: 0;
@@ -23,18 +18,16 @@ code {
   padding: 0;
   margin: 0;
   font-family: "Josefin Sans", "Arial Narrow", Arial, sans-serif;
-  /* background: #ecf0f1; */
 }
 
 .header {
   width: 100%;
   line-height: 100px;
-  background-color: #f5ba13;
   display: flex;
   justify-content: start;
   align-items: center;
   padding-left: 50px;
-  color: white;
+  color: #5f6368;
   box-shadow: 5px 3px 15px -5px rgba(0, 0, 0, 0.5);
 }
 
@@ -81,38 +74,6 @@ textarea {
   margin: 10px 0;
 }
 
-/* .MuiButton-root {
-  width: 30px;
-  height: 50px;
-  position: absolute;
-  bottom: -28px;
-  left: 400px;
-  cursor: pointer;
-  background-color: #fff !important;
-  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.5);
-  border-radius: 50% !important;
-} */
-
-.plus_sign {
-  font-size: 45px !important;
-  font-weight: 900;
-  color: #f4b400;
-  cursor: pointer;
-  z-index: 222;
-  background: transparent;
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
-}
-
-/* .MuiButton-root:hover {
-  background: #f4b400 !important;
-}
-.MuiButton-root:hover .plus_sign {
-  color: #fff;
-  background: transparent;
-} */
-
 .note {
   background: #fff;
   border-radius: 7px;
@@ -120,7 +81,6 @@ textarea {
   padding: 10px;
   width: 240px;
   margin: 16px;
-  float: left;
 }
 .note h1 {
   font-size: 1.1em;
@@ -135,9 +95,7 @@ textarea {
 
 .note .btn {
   position: relative;
-  float: right;
   margin-right: 10px;
-  /* color: #f5ba13; */
   color: #f4b400;
   border: none;
   width: 50px;
@@ -149,20 +107,30 @@ textarea {
   border-radius: 50%;
 }
 
-.deleteIcon {
-  width: 0.7em;
-  height: 0.7em;
+.plus-btn{
+  position: relative;
+  margin-right: 10px;
+  color: #f4b400;
+  border: none;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 3px 3px 15px -10px rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
 }
 
 .note .btn:hover {
-  background-color: #f5ba13;
-  background-color: #f4b400;
+  background-color: #36373a;
+  opacity: 0.71;
 }
 
-.note .btn:hover .deleteIcon {
-  /* background-color: #f5ba13; */
-  color: #fff;
+.plus-btn:hover{
+  background-color: #36373a;
+  opacity: 0.71;
 }
+
 
 footer {
   width: 100%;
@@ -173,3 +141,41 @@ footer {
   padding-bottom: 10px;
   color: #34495e;
 }
+
+
+.pinned-notes {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.unpinned--notes{
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.pinned--tag {
+  color: #5f6368;
+  letter-spacing: .07272727em;
+  font-family: Roboto,Arial,sans-serif;
+  font-size: .6875rem;
+  font-weight: 500;
+  line-height: 1rem;
+  visibility: visible;
+  margin-left: 35px;
+}
+
+.unpinned--tag{
+  color: #5f6368;
+  letter-spacing: .07272727em;
+  font-family: Roboto,Arial,sans-serif;
+  font-size: .6875rem;
+  font-weight: 500;
+  line-height: 1rem;
+  visibility: visible;
+  margin-left: 35px;
+
+}
+

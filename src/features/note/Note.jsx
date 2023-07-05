@@ -4,7 +4,13 @@ const Note = (props) => {
   const deleteNote = (e) => {
     e.preventDefault();
     alert("delete it now");
-    props.deleteItem(props.id);
+    props.deleteNote(props.id);
+  };
+
+  const pinNote = (e) => {
+    e.preventDefault();
+    alert("pin note");
+    props.pinNote(props.id);
   };
 
   return (
@@ -15,6 +21,9 @@ const Note = (props) => {
         <p>{props.content} </p>
         <button onClick={deleteNote} className="btn">
           DEL
+        </button>
+        <button onClick={pinNote} className="btn">
+          PIN
         </button>
       </div>
     </>

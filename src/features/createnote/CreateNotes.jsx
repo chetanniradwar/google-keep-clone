@@ -2,15 +2,16 @@ import React, { useState } from "react";
 
 const Note = (props) => {
   const [isExpand, setIsExpand] = useState(false);
-  const [note, setNotes] = useState({
+  const [note, setNote] = useState({
     title: "",
     content: "",
+    isPinned: false,
   });
 
   const inputEvent = (event) => {
     const { name, value } = event.target;
 
-    setNotes((prevData) => {
+    setNote((prevData) => {
       return {
         ...prevData,
         [name]: value,
@@ -18,12 +19,13 @@ const Note = (props) => {
     });
   };
 
-  const addEvent = (e) => {
+  const addNote = (e) => {
     e.preventDefault();
     props.passNote(note);
-    setNotes({
+    setNote({
       title: "",
       content: "",
+      isPinned: false,
     });
   };
 
@@ -62,9 +64,11 @@ const Note = (props) => {
           ></textarea>
 
           {isExpand ? (
-            <button className="plus_sign" onClick={addEvent}>
-             +
+            
+            <button className="plus-btn" onClick={addNote}>
+             ADD
             </button>
+
           ) : null}
         </form>
       </div>
