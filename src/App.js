@@ -9,7 +9,7 @@ import { deleteNote, pinNote } from './features/note/notesSlice'
 const App = () => {
 
   const notes = useSelector((state) => state.Notes.all_notes)
-  console.log(notes)
+
   const dispatch = useDispatch()
   const onDelete = (id) => {
     dispatch(deleteNote(id))
