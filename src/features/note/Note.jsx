@@ -3,13 +3,15 @@ import React from "react";
 const Note = (props) => {
   const deleteNote = (e) => {
     e.preventDefault();
-    alert("delete it now");
-    props.deleteNote(props.id);
+    const ans = window.confirm("Do you really want to delete the note?");
+    if(ans)
+      props.deleteNote(props.id);
+      return
+    
   };
 
   const pinNote = (e) => {
     e.preventDefault();
-    alert("pin note");
     props.pinNote(props.id);
   };
 

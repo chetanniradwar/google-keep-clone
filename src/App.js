@@ -8,6 +8,11 @@ import { pureFinalPropsSelectorFactory } from "react-redux/es/connect/selectorFa
 const App = () => {
   const [notes, setNotes] = useState([]);
   const addNote = (note) => {
+    if (note.content.length ==0 && note.title.length ==0 ){
+      alert("Please add title or content")
+      return
+    }
+
     setNotes((prevData) => {
       return [...prevData, note];
     });
