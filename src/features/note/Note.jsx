@@ -1,6 +1,6 @@
 import React from "react";
-import { useSelector, useDispatch } from 'react-redux';
-import {pinNote, deleteNote} from '../note/notesSlice'
+import { useDispatch } from 'react-redux';
+import { pinNote, deleteNote } from '../note/notesSlice'
 
 const Note = (props) => {
   const dispatch = useDispatch()
@@ -8,16 +8,14 @@ const Note = (props) => {
   const delete_note = (e) => {
     e.preventDefault();
     const ans = window.confirm("Do you really want to delete the note?");
-    if(ans)
-      // props.deleteNote(props.id);
+    if (ans)
       dispatch(deleteNote(props.id))
-      return
-    
+    return
+
   };
 
   const pin_note = (e) => {
     e.preventDefault();
-    // props.pin_note(props.id)
     dispatch(pinNote(props.id));
   };
 

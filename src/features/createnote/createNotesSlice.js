@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import {createSlice } from '@reduxjs/toolkit';
 
 const initialStateValue = {
   note : {  title: "",
@@ -12,7 +12,6 @@ export const createNoteSlice = createSlice({
 
     reducers:{
         updateNote : (state, action) => {
-            // console.log(action.payload)
             const {name , value} = action.payload
             return {
                 ...state.note,
@@ -21,7 +20,7 @@ export const createNoteSlice = createSlice({
         },
 
         initializeNote : (state, action) => {
-            return initialStateValue
+            return initialStateValue.note
             
         }
 

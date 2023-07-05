@@ -1,57 +1,33 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 
-import {updateNote,initializeNote} from '../createnote/createNotesSlice'
+import { updateNote, initializeNote } from '../createnote/createNotesSlice'
 
-import {addNote, } from '../note/notesSlice'
+import { addNote, } from '../note/notesSlice'
 
 
-const Note = (props) => {
+const Note = () => {
 
+  const note = useSelector((state) => state.createNote)
   const dispatch = useDispatch()
 
   const [isExpand, setIsExpand] = useState(false);
-  const note = useSelector((state) => state.createNote.note)
-  console.log("here", note)
-  // const [note, setNote] = useState({
-  //   title: "",
-  //   content: "",
-  //   isPinned: false,
-  // });
 
 
   const update_note = (event) => {
-    const { name, value } = event.target;
-    // console.log("fsf", name, value)
-    // console.log(event.target)
     dispatch(updateNote(event.target))
-    // const { name, value } = event.target;
-
-  //   setNote((prevData) => {
-  //     return {
-  //       ...prevData,
-  //       [name]: value,
-  //     };
-  //   });
   };
-  
+
 
   const add_note = (e) => {
     e.preventDefault();
-    // props.passNote(note);
-    console.log("fewf", note)
-    if (note.content.length == 0 && note.title.length == 0 ){
-          alert("Please add title or content")
-          return
-        }
-        
+    if (!note.content && !note.title) {
+      alert("Please add title or content")
+      return
+    }
+
     dispatch(addNote(note))
     dispatch(initializeNote())
-    // setNote({
-    //   title: "",
-    //   content: "",
-    //   isPinned: false,
-    // });
   };
 
   const expandIt = () => {
@@ -89,9 +65,9 @@ const Note = (props) => {
           ></textarea>
 
           {isExpand ? (
-            
+
             <button className="plus-btn" onClick={add_note}>
-             ADD
+              ADD
             </button>
 
           ) : null}
