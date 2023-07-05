@@ -16,8 +16,6 @@ export const notesSlice = createSlice({
         },
 
         deleteNote: (state, action) => {
-
-            console.log(action.payload)
             return {
                 ...state,
                 all_notes: state.all_notes.filter((note, index) => index !== action.payload)
