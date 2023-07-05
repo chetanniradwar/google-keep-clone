@@ -143,7 +143,7 @@ footer {
 }
 
 
-.pinned-notes {
+.pinned--notes {
   display: flex;
   flex-wrap: wrap;
 

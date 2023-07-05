@@ -1,18 +1,24 @@
 import React from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import {pinNote, deleteNote} from '../note/notesSlice'
 
 const Note = (props) => {
-  const deleteNote = (e) => {
+  const dispatch = useDispatch()
+
+  const delete_note = (e) => {
     e.preventDefault();
     const ans = window.confirm("Do you really want to delete the note?");
     if(ans)
-      props.deleteNote(props.id);
+      // props.deleteNote(props.id);
+      dispatch(deleteNote(props.id))
       return
     
   };
 
-  const pinNote = (e) => {
+  const pin_note = (e) => {
     e.preventDefault();
-    props.pinNote(props.id);
+    // props.pin_note(props.id)
+    dispatch(pinNote(props.id));
   };
 
   return (
@@ -21,10 +27,10 @@ const Note = (props) => {
         <h1> {props.title} </h1>
         <br />
         <p>{props.content} </p>
-        <button onClick={deleteNote} className="btn">
+        <button onClick={delete_note} className="btn">
           DEL
         </button>
-        <button onClick={pinNote} className="btn">
+        <button onClick={pin_note} className="btn">
           PIN
         </button>
       </div>
